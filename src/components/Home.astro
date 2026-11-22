@@ -61,7 +61,10 @@ const year = new Date().getFullYear();
         chronicle.map((e) => (
           <li>
             <span class="when">{t(e.when)}</span>
-            <p>{t(e.text)}</p>
+            <div>
+              <p>{t(e.text)}</p>
+              {e.detail && <p class="detail">{t(e.detail)}</p>}
+            </div>
           </li>
         ))
       }

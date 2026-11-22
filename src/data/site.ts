@@ -39,6 +39,7 @@ export interface Castle {
 export interface Event {
   when: T;
   text: T;
+  detail?: T;
 }
 
 export interface Medium {
@@ -98,38 +99,79 @@ export const hero = {
     en: 'A “feng-shui practitioner” bridging civil engineering, agronomy and the study of fate — and a “civilization hacker” who works in poetry, AI and structure.',
   },
   intro: {
-    ja: '青ナイルの源、タナ湖のほとりで、古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を量り、建物を合わせ、土を調え、運命を読み、AI と記憶を織る。五つの城はばらばらに見えて、どれも同じ問いで築かれている——与えられた器に、どこまで載せられるか。',
-    en: 'It began by Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Measuring lightning, joining structures, tending soil, reading fate, weaving AI and memory — five castles that look unrelated, all raised by one question: how much can this vessel hold?',
+    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を量り、建物を合わせ、土を調え、運命を読み、AI と記憶を織る。五つの城はばらばらに見えて、どれも同じ問いで築かれている——与えられた器に、どこまで載せられるか。',
+    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Measuring lightning, joining structures, tending soil, reading fate, weaving AI and memory — five castles that look unrelated, all raised by one question: how much can this vessel hold?',
   },
 };
 
 export const chronicle: Event[] = [
   {
-    when: { ja: '前史', en: 'Before' },
+    when: { ja: '2004', en: '2004' },
     text: {
-      ja: 'エチオピア、バハルダール大学でフィールドエンジニアとして働く（時期は TBD）。',
-      en: 'Field engineer at Bahir Dar University, Ethiopia (years TBD).',
+      ja: '大学卒業後、データベースエンジニアとして各種 SI 案件に携わる。',
+      en: 'After university, worked as a database engineer on a range of systems integration projects.',
+    },
+    detail: {
+      ja: '高度情報処理技術者資格（データベーススペシャリスト・システムアーキテクト・プロジェクトマネージャ・IT ストラテジスト・システム監査技術者）やベンダー資格を多数取得。',
+      en: 'Went on to earn many of Japan’s advanced IT engineer certifications (Database Specialist, Systems Architect, Project Manager, IT Strategist, Systems Auditor) and vendor certifications.',
+    },
+  },
+  {
+    when: { ja: '2006', en: '2006' },
+    text: {
+      ja: '青年海外協力隊に参画し、エチオピア・バハルダール大学でフィールドエンジニアとして働く。',
+      en: 'Joined the Japan Overseas Cooperation Volunteers and worked as a field engineer at Bahir Dar University, Ethiopia.',
+    },
+    detail: {
+      ja: '2008 年、独自の Linux ディストロ（古い PC で稼働する、新興国向けの多言語 LiveOS）を公開。',
+      en: 'In 2008, released an original Linux distribution — a multilingual live OS for emerging countries that runs on old PCs.',
     },
   },
   {
     when: { ja: '2009', en: '2009' },
     text: {
-      ja: 'TOP（Tacky Optimizing Puppy）Linux と Kiva 版を公開。新興国で働く国際協力者のための、古い PC で動く多言語の LiveCD。',
-      en: 'Released TOP (Tacky Optimizing Puppy) Linux and its Kiva edition — multilingual LiveCDs for international cooperators in emerging countries, built to run on old PCs.',
+      ja: '帰国後、コンサルティングファームにテックリードとして入社。占い師としても活動する。',
+      en: 'Back in Japan, joined a consulting firm as a tech lead, while also practicing as a fortune-teller.',
+    },
+    detail: {
+      ja: 'データベース技術の外部講師や、『プログラマのための SQL 第4版』翻訳時のテクニカルレビューも担当。',
+      en: 'Taught database technology as an outside lecturer, and served as technical reviewer for the Japanese translation of Joe Celko’s SQL for Smarties, 4th edition.',
     },
   },
   {
-    when: { ja: 'TBD', en: 'TBD' },
+    when: { ja: '2012', en: '2012' },
     text: {
-      ja: 'IT コンサルタントとして働く（詳細は TBD）。',
-      en: 'Worked as an IT consultant (details TBD).',
+      ja: 'ビジネス要件から一気通貫での業務システム構築を目指し、IT コンサルに転身する。',
+      en: 'Moved into IT consulting, aiming to build business systems end to end, starting from business requirements.',
+    },
+    detail: {
+      ja: 'MOLAP アーキテクチャの BI 製品の導入スタディのため、ポーランドに滞在。',
+      en: 'Stayed in Poland for an implementation study of a BI product built on a MOLAP architecture.',
     },
   },
   {
-    when: { ja: 'TBD', en: 'TBD' },
+    when: { ja: '2014', en: '2014' },
     text: {
-      ja: '建設の道へ。土地の仕入れ、採算の見立て、設計の監修を担う。',
-      en: 'Turned to construction: land acquisition, feasibility studies and design supervision.',
+      ja: '子供の誕生を機に、資産形成を目的として、土地からの新築に乗り出す。',
+      en: 'With the birth of a child, began building new from the land up, as a way to build assets.',
+    },
+    detail: {
+      ja: '施工会社の破綻危機に巻き込まれるも、同社を支援し経営再建に成功。',
+      en: 'Caught up when the builder nearly went under, supported the company through a successful turnaround.',
+    },
+  },
+  {
+    when: { ja: '2015', en: '2015' },
+    text: {
+      ja: 'グロービス経営大学院を修了（MBA）。',
+      en: 'Completed an MBA at GLOBIS University Graduate School of Management.',
+    },
+  },
+  {
+    when: { ja: '2017', en: '2017' },
+    text: {
+      ja: '建設会社の役員への招聘に応じ、キャリアの軸足を建設業に移す。',
+      en: 'Accepted an invitation to join a construction company as an officer, shifting the center of the career to construction.',
     },
   },
   {
@@ -151,6 +193,13 @@ export const chronicle: Event[] = [
     text: {
       ja: '推論エンジン TensorFold の上流へ寄与を始め、GB10 級の機材で GLM-5.3-Flash を配る BIZ と XSFP4 の重みを公開。声で占う AI「惟任」を展示会に出す。',
       en: 'Began contributing upstream to the TensorFold inference engine, released BIZ for serving GLM-5.3-Flash on GB10-class systems along with XSFP4 weights, and exhibited “Koretō,” an AI that reads fortunes by voice.',
+    },
+  },
+  {
+    when: { ja: '現在', en: 'Now' },
+    text: {
+      ja: '建設会社の設立に創業株主として関与し、事業開発本部長として主にマーケティングと R&D を担う。',
+      en: 'A founding shareholder of a construction company, now heading business development with a focus on marketing and R&D.',
     },
   },
 ];
@@ -197,6 +246,11 @@ export const castles: Castle[] = [
       en: 'Lightning is information. The vessel grows; the question stays — how much will it hold?',
     },
     skills: [
+      { ja: 'データベース設計と性能チューニング', en: 'Database design and performance tuning' },
+      { ja: '情報系システムの要件定義から構築まで', en: 'Analytics systems from requirements to delivery' },
+      { ja: 'BI と MOLAP', en: 'BI and MOLAP' },
+      { ja: 'ERP と管理会計の業務改善', en: 'ERP and management-accounting process improvement' },
+      { ja: 'プロジェクトマネジメント', en: 'Project management' },
       { ja: 'CUDA と Zig の推論エンジン', en: 'Inference engines in CUDA and Zig' },
       { ja: 'NVFP4・XSFP4 の量子化', en: 'NVFP4 and XSFP4 quantization' },
       { ja: 'GB10（DGX Spark 級）複数台での分散推論', en: 'Distributed inference across GB10 (DGX Spark-class) machines' },
@@ -262,11 +316,11 @@ export const castles: Castle[] = [
       {
         title: { ja: 'TOP／Kiva Linux', en: 'TOP / Kiva Linux' },
         note: {
-          ja: '新興国の古い PC で動く多言語の LiveCD。Archive.org に保存されている。',
-          en: 'Multilingual LiveCDs for old PCs in emerging countries, preserved on Archive.org.',
+          ja: '新興国の古い PC で動く多言語の LiveCD。SourceForge.jp で一時 6 位。今は Archive.org に保存されている。',
+          en: 'Multilingual LiveCDs for old PCs in emerging countries. Once ranked 6th on SourceForge.jp; now preserved on Archive.org.',
         },
         status: 'released',
-        year: '2009',
+        year: '2008',
         href: 'https://archive.org/details/Puppy_Linux_Tacky_Optimizing_Puppy',
       },
       {
@@ -295,6 +349,8 @@ export const castles: Castle[] = [
       { ja: 'RC の集合住宅（壁式・半地下）', en: 'RC apartment buildings (wall-frame, half-basement)' },
       { ja: '山留めと地中連続壁', en: 'Earth retention and diaphragm walls' },
       { ja: '特許明細書の起草', en: 'Drafting patent specifications' },
+      { ja: '施工会社の経営再建', en: 'Turning around a construction firm' },
+      { ja: 'マーケティングと R&D', en: 'Marketing and R&D' },
     ],
     works: [
       {
@@ -404,6 +460,7 @@ export const castles: Castle[] = [
       { ja: 'タロット', en: 'Tarot (Rider–Waite–Smith)' },
       { ja: '星平会海姓名術——数理・星導・陰陽五行の融合', en: 'Seihei-kaikai name art — numerology, astrology and the five phases in one' },
       { ja: '経営判断の支援', en: 'Supporting management decisions' },
+      { ja: '経営学（MBA）と管理会計', en: 'Business administration (MBA) and management accounting' },
     ],
     works: [
       {

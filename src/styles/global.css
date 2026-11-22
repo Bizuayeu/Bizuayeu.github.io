@@ -340,6 +340,12 @@ a:hover {
   margin: 0;
 }
 
+.timeline .detail {
+  margin-top: 0.2rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 /* winds */
 .winds {
   display: grid;
