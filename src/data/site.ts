@@ -119,8 +119,8 @@ export const chronicle: Event[] = [
   {
     when: { ja: '2009', en: '2009' },
     text: {
-      ja: '帰国し、コンサルティングファームのテックリードに。占い師としても活動。',
-      en: 'Back in Japan: tech lead at a consulting firm, and a practicing fortune-teller.',
+      ja: '帰国し、独立系ソフトハウスのテックリードに。占い師としても活動。',
+      en: 'Back in Japan: tech lead at an independent software house, and a practicing fortune-teller.',
     },
   },
   {
