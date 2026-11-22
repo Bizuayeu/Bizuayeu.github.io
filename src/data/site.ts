@@ -15,7 +15,9 @@ export type Status =
   | 'running'
   | 'paused'
   | 'exhibited'
-  | 'project';
+  | 'project'
+  | 'business'
+  | 'method';
 
 export interface Work {
   title: T;
@@ -69,6 +71,8 @@ export const ui = {
     paused: { ja: '休止', en: 'Paused' },
     exhibited: { ja: '出展', en: 'Exhibited' },
     project: { ja: '進行', en: 'Ongoing' },
+    business: { ja: '事業', en: 'Business' },
+    method: { ja: '工法', en: 'Method' },
   } satisfies Record<Status, T>,
   domainsLead: {
     ja: '八幡掛けて八城築かん。城を築く手は、五つの領域にまたがる。',
@@ -230,47 +234,49 @@ export const domains: Domain[] = [
     name: { ja: '造の領域', en: 'Domain of Building' },
     trade: { ja: '建設業', en: 'Construction' },
     motto: {
-      ja: '土地を読み、躯体を合わせる——目利きから山留めの発明まで、建築を一気通貫で',
-      en: 'Read the land, compose the frame — from spotting the site to inventing the earth retention, building end to end.',
+      ja: '土地の潜在的な収益性を引き出す——目利きから引渡しまで、建築を一気通貫で',
+      en: 'Drawing out the hidden earning power of land — from spotting the site to handing over the keys, building end to end.',
     },
     works: [
       {
-        title: { ja: '小断面の地中連続壁', en: 'Small-section diaphragm wall' },
+        title: { ja: 'めぐる組', en: 'Meguru-gumi' },
         note: {
-          ja: '隣地に寄せて山留めを築くための地中連続壁。',
-          en: 'A diaphragm wall for earth retention close to neighboring land.',
+          ja: '事業開発本部長としてマーケティングや R&D に従事。',
+          en: 'Head of business development, working on marketing and R&D.',
         },
-        status: 'granted',
-        year: '2022',
+        status: 'business',
       },
       {
         title: { ja: '土留め構造及び土留め構造の構築方法', en: 'Earth-retaining structure and its construction method' },
+        note: {
+          ja: '止水性のある地中連続壁を、狭小地でも施工可能にする。',
+          en: 'Makes watertight diaphragm walls buildable even on narrow sites.',
+        },
         status: 'granted',
-        year: '2023',
       },
       {
-        title: { ja: '木造耐火ラーメン合成スラブ（Trinitaria）', en: 'Fire-resistant timber rigid-frame composite slab (Trinitaria)' },
+        title: { ja: '壁式 RC 長屋', en: 'Wall-frame RC row houses' },
+        note: {
+          ja: '共同住宅を建てられない土地に、集合住宅を建てられる計画と実装。',
+          en: 'Planning and building multi-unit housing on land where an apartment building is not allowed.',
+        },
+        status: 'method',
+      },
+      {
+        title: { ja: '音響シャフト構造', en: 'Acoustic shaft structure' },
+        note: {
+          ja: '壁式 RC 一棟マンションにおいて、複数の防音室を安価に実現する。',
+          en: 'Delivers several soundproof rooms at low cost in a wall-frame RC apartment building.',
+        },
         status: 'filed',
       },
       {
-        title: { ja: '音響シャフト領域', en: 'Acoustic shaft zone' },
-        status: 'filed',
-      },
-      {
-        title: { ja: '事務猫AI', en: 'JimuNeko AI' },
+        title: { ja: '半地下付き耐火混構造躯体', en: 'Fire-resistant hybrid frame with a half-basement' },
         note: {
-          ja: '中小建設業の担い手を支える、経営事務のエージェント。',
-          en: 'An agent for back-office work in small construction firms.',
+          ja: 'RC と木造の良いところを両取りし、かつ容積開放で収益性向上。',
+          en: 'Takes the best of RC and timber, and raises returns by unlocking floor area.',
         },
-        status: 'concept',
-      },
-      {
-        title: { ja: '高尾山の別荘', en: 'A retreat on Mt. Takao' },
-        note: {
-          ja: '高尾山の土地に別荘を建てる計画。',
-          en: 'A plan to build a retreat on land at Mt. Takao.',
-        },
-        status: 'concept',
+        status: 'method',
       },
     ],
   },
