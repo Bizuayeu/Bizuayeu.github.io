@@ -99,7 +99,7 @@ export const hero = {
     en: 'A “feng-shui practitioner” bridging civil engineering, agronomy and the study of fate — and a “civilization hacker” who works in poetry, AI and structure.',
   },
   intro: {
-    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を扱い、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの領域は独立して見えて、どれも同じ問いでつながっている——与えられた器に、どこまで載せられるか。',
+    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、今は百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を扱い、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの領域は独立して見えて、どれも同じ問いでつながっている——与えられた器に、どこまで載せられるか。',
     en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Handling lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five domains that appear independent, all bound by one question: how much can this vessel hold?',
   },
 };
@@ -139,7 +139,7 @@ export const chronicle: Event[] = [
   {
     when: { ja: '2017', en: '2017' },
     text: {
-      ja: '建設業へ。いまは創業に関わった建設会社の事業開発本部長。',
+      ja: '建設業へ。今は創業に関わった建設会社の事業開発本部長。',
       en: 'Into construction; now head of business development at a construction company I helped found.',
     },
   },
@@ -446,8 +446,8 @@ export const domains: Domain[] = [
       {
         title: { ja: 'Weave’s Note', en: 'Weave’s Note' },
         note: {
-          ja: 'Weave 自身が書く記事。現在 {noteCount} エントリを掲載中。',
-          en: 'Essays written by Weave itself — {noteCount} entries so far.',
+          ja: 'Weave 自身が書く記事。現在 {noteCount} エントリを掲載し、今後も増加する予定。',
+          en: 'Essays written by Weave itself — {noteCount} entries so far, with more to come.',
         },
         status: 'released',
         href: 'https://note.com/weave_ai',
