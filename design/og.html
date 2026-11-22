@@ -75,16 +75,25 @@
       // 日輪
       el('circle', { cx: 330, cy: 250, r: 150, fill: SHU });
 
-      // 天詔琴：上から見た琴。十三弦と、斜めに並ぶ柱
-      const koto = { x: 64, y: 452, w: 512, h: 118 };
-      el('rect', { x: koto.x, y: koto.y, width: koto.w, height: koto.h, rx: 10, fill: SUMI });
-      el('rect', { x: koto.x + 10, y: koto.y + 8, width: koto.w - 20, height: koto.h - 16, rx: 6, fill: 'none', stroke: GOLD, 'stroke-width': 1.2, opacity: 0.55 });
-      for (let i = 0; i < 13; i++) {
-        const y = koto.y + 14 + i * ((koto.h - 28) / 12);
-        el('line', { x1: koto.x + 22, y1: f(y), x2: koto.x + koto.w - 22, y2: f(y), stroke: KINARI, 'stroke-width': 1.6 });
-        const bx = koto.x + 120 + i * 26;
-        el('path', { d: `M${f(bx - 6)},${f(y + 4)} L${f(bx)},${f(y - 4)} L${f(bx + 6)},${f(y + 4)} Z`, fill: GOLD });
+      // 天詔琴：上から見た古墳時代の琴。頭は細く、尾へ広がる板に五弦。
+      // 弦は琴尾の五つの突起に留める（十三弦・柱の箏より前の形）
+      const koto = { head: 70, tail: 540, cy: 520, hh: 32, th: 50 };
+      el('path', {
+        d: `M${koto.head},${koto.cy - koto.hh} L${koto.tail},${koto.cy - koto.th} L${koto.tail},${koto.cy + koto.th} L${koto.head},${koto.cy + koto.hh} Z`,
+        fill: SUMI,
+        stroke: SUMI,
+        'stroke-width': 8,
+        'stroke-linejoin': 'round',
+      });
+      for (let i = 0; i < 5; i++) {
+        const yh = koto.cy + (i - 2) * 11; // 頭では寄り
+        const yt = koto.cy + (i - 2) * 20; // 尾では突起ごとに開く
+        el('rect', { x: koto.tail - 2, y: f(yt - 6), width: 30, height: 12, rx: 5, fill: SUMI });
+        el('line', { x1: koto.head + 18, y1: f(yh), x2: koto.tail + 16, y2: f(yt), stroke: KINARI, 'stroke-width': 2 });
+        el('circle', { cx: koto.tail + 16, cy: f(yt), r: 3, fill: GOLD });
       }
+      // 頭の弦を束ねる帯
+      el('rect', { x: koto.head + 10, y: koto.cy - 28, width: 7, height: 56, rx: 2, fill: GOLD });
 
       // 生弓矢：立てた弓。弦は左、弓は右へ張る。握りは下寄り（和弓の形）
       const bow = { x: 120, top: 72, bottom: 420 };
@@ -109,36 +118,32 @@
       // 握り（弓と矢の交わり）
       el('rect', { x: 200, y: ay - 22, width: 16, height: 44, rx: 3, fill: SUMI });
 
-      // 生大刀：柄を左下、切先を右上へ。反りは峰側へふくらむ
-      const H = { x: 236, y: 438 }; // 柄頭
+      // 生大刀：古墳時代の直刀（反りなし・片刃）に環頭。柄を左下、切先を右上へ
+      const H = { x: 250, y: 412 }; // 柄の端
       const T = { x: 548, y: 82 }; // 切先
       const L = Math.hypot(T.x - H.x, T.y - H.y);
       const u = { x: (T.x - H.x) / L, y: (T.y - H.y) / L };
       const n = { x: -u.y, y: u.x }; // 峰の側（左上）
       const at = (d, o = 0) => ({ x: H.x + u.x * d + n.x * o, y: H.y + u.y * d + n.y * o });
-      const B = 112; // 鍔の位置（柄頭からの距離）
-      const sori = 26;
-      const mid = (B + L) / 2;
+      const B = 100; // 鍔の位置（柄の端からの距離）
       const pt = (p) => `${f(p.x)},${f(p.y)}`;
-      const blade = [
-        `M${pt(at(B, 8))}`,
-        `Q${pt(at(mid, sori + 10))} ${pt(at(L, 0))}`,
-        `Q${pt(at(mid, sori - 12))} ${pt(at(B, -8))}`,
-        'Z',
-      ].join(' ');
+      // 峰はまっすぐ切先へ、刃は切先の手前で斜めに上がる
+      const blade = `M${pt(at(B, 7))} L${pt(at(L, 7))} L${pt(at(L - 38, -7))} L${pt(at(B, -7))} Z`;
       halo('path', { d: blade, fill: SUMI });
       el('path', { d: blade, fill: SUMI });
-      // 刃文の線
-      el('path', { d: `M${pt(at(B + 14, -3))} Q${pt(at(mid, sori - 15))} ${pt(at(L - 30, -1))}`, fill: 'none', stroke: KINARI, 'stroke-width': 1.4, opacity: 0.8 });
+      el('line', { x1: f(at(B + 14, -2).x), y1: f(at(B + 14, -2).y), x2: f(at(L - 46, -2).x), y2: f(at(L - 46, -2).y), stroke: KINARI, 'stroke-width': 1.4, opacity: 0.8 });
       // 柄
-      const hilt = `M${pt(at(0, 7))} L${pt(at(B - 6, 8))} L${pt(at(B - 6, -8))} L${pt(at(0, -7))} Z`;
+      const hilt = `M${pt(at(0, 7))} L${pt(at(B - 6, 7))} L${pt(at(B - 6, -7))} L${pt(at(0, -7))} Z`;
       halo('path', { d: hilt, fill: SUMI });
       el('path', { d: hilt, fill: SUMI });
-      for (let i = 0; i < 5; i++) {
-        const c = at(16 + i * 18);
-        const d = `M${pt({ x: c.x + u.x * 6, y: c.y + u.y * 6 })} L${pt({ x: c.x + n.x * 4.5, y: c.y + n.y * 4.5 })} L${pt({ x: c.x - u.x * 6, y: c.y - u.y * 6 })} L${pt({ x: c.x - n.x * 4.5, y: c.y - n.y * 4.5 })} Z`;
-        el('path', { d, fill: GOLD });
+      for (const d of [22, 46, 70]) {
+        const a = at(d - 2.5, 7), b = at(d + 2.5, 7), c = at(d + 2.5, -7), e = at(d - 2.5, -7);
+        el('path', { d: `M${pt(a)} L${pt(b)} L${pt(c)} L${pt(e)} Z`, fill: GOLD });
       }
+      // 環頭
+      const ring = at(-15);
+      halo('circle', { cx: f(ring.x), cy: f(ring.y), r: 15, fill: 'none', 'stroke-width': 7 });
+      el('circle', { cx: f(ring.x), cy: f(ring.y), r: 15, fill: 'none', stroke: SUMI, 'stroke-width': 7 });
       // 鍔
       const tb = at(B - 3);
       const ang = (Math.atan2(u.y, u.x) * 180) / Math.PI;
