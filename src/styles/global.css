@@ -409,13 +409,15 @@ a:hover {
   font-size: 0.92rem;
 }
 
+/* 煽り文が技を語る（技の一覧は置かない） */
 .motto {
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.08rem;
+  font-weight: 700;
+  font-size: clamp(1.08rem, 2.6vw, 1.25rem);
+  line-height: 1.65;
   margin: 1.1rem 0 1.3rem;
   padding-left: 0.9rem;
-  border-left: 2px solid var(--c);
+  border-left: 3px solid var(--c);
 }
 
 .domain h4 {
@@ -423,23 +425,6 @@ a:hover {
   color: var(--c);
   margin: 1rem 0 0.5rem;
   letter-spacing: 0.1em;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.skills li {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.1rem 0.8rem;
-  font-size: 0.88rem;
-  background: var(--bg);
 }
 
 .works {

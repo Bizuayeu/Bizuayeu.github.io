@@ -32,7 +32,6 @@ export interface Domain {
   name: T;
   trade: T;
   motto: T;
-  skills: T[];
   works: Work[];
 }
 
@@ -61,7 +60,6 @@ export const ui = {
     domains: { ja: '五つの領域', en: 'Domains' },
     media: { ja: '便り', en: 'Find me' },
   },
-  skillsLabel: { ja: '技', en: 'Arts' },
   worksLabel: { ja: '業', en: 'Works' },
   status: {
     granted: { ja: '特許', en: 'Patent' },
@@ -178,23 +176,9 @@ export const domains: Domain[] = [
     name: { ja: '雷の領域', en: 'Domain of Thunder' },
     trade: { ja: '情報サービス業', en: 'Information services' },
     motto: {
-      ja: '雷は情報。器が大きくなっても、問いは同じ——どこまで載せられるか。',
-      en: 'Lightning is information. The vessel grows; the question stays — how much will it hold?',
+      ja: '電子の力を、漏らさず余さず——最適化を武器とした二十余年',
+      en: 'Electric power, with nothing leaked and nothing to spare — twenty-odd years armed with optimization.',
     },
-    skills: [
-      { ja: '高度情報処理技術者（DB スペシャリストほか 5 区分）', en: 'Japan’s advanced IT engineer certifications (Database Specialist and four more)' },
-      { ja: 'データベース設計と性能チューニング', en: 'Database design and performance tuning' },
-      { ja: '情報系システムの要件定義から構築まで', en: 'Analytics systems from requirements to delivery' },
-      { ja: 'BI と MOLAP', en: 'BI and MOLAP' },
-      { ja: 'ERP と管理会計の業務改善', en: 'ERP and management-accounting process improvement' },
-      { ja: 'プロジェクトマネジメント', en: 'Project management' },
-      { ja: 'CUDA と Zig の推論エンジン', en: 'Inference engines in CUDA and Zig' },
-      { ja: 'NVFP4・XSFP4 の量子化', en: 'NVFP4 and XSFP4 quantization' },
-      { ja: 'GB10（DGX Spark 級）複数台での分散推論', en: 'Distributed inference across GB10 (DGX Spark-class) machines' },
-      { ja: 'MCP サーバと Claude Code のプラグイン', en: 'MCP servers and Claude Code plugins' },
-      { ja: 'Clean Architecture と TDD', en: 'Clean Architecture and TDD' },
-      { ja: 'Linux ディストリビューションの制作', en: 'Building Linux distributions' },
-    ],
     works: [
       {
         title: { ja: 'TensorFold への寄与', en: 'Contributions to TensorFold' },
@@ -285,18 +269,9 @@ export const domains: Domain[] = [
     name: { ja: '造の領域', en: 'Domain of Building' },
     trade: { ja: '建設業', en: 'Construction' },
     motto: {
-      ja: '狭い土地に、材料の長所を合わせて建てる。',
-      en: 'On narrow land, build by joining the strengths of materials.',
+      ja: '土地を読み、躯体を合わせる——目利きから山留めの発明まで、建築を一気通貫で',
+      en: 'Read the land, compose the frame — from spotting the site to inventing the earth retention, building end to end.',
     },
-    skills: [
-      { ja: '土地の仕入れと採算の見立て', en: 'Land acquisition and feasibility studies' },
-      { ja: '設計の監修', en: 'Design supervision' },
-      { ja: 'RC の集合住宅（壁式・半地下）', en: 'RC apartment buildings (wall-frame, half-basement)' },
-      { ja: '山留めと地中連続壁', en: 'Earth retention and diaphragm walls' },
-      { ja: '特許明細書の起草', en: 'Drafting patent specifications' },
-      { ja: '施工会社の経営再建', en: 'Turning around a construction firm' },
-      { ja: 'マーケティングと R&D', en: 'Marketing and R&D' },
-    ],
     works: [
       {
         title: { ja: '小断面の地中連続壁', en: 'Small-section diaphragm wall' },
@@ -344,15 +319,9 @@ export const domains: Domain[] = [
     name: { ja: '土の領域', en: 'Domain of Earth' },
     trade: { ja: '農業', en: 'Agriculture' },
     motto: {
-      ja: '青い実を、この国の土に。',
-      en: 'Blue berries, for the soil of this land.',
+      ja: '青い実を、この国の土に——育種と土づくりで、国産ブルーベリーを底上げする',
+      en: 'Blue berries for the soil of this land — lifting domestic blueberries through breeding and soil design.',
     },
-    skills: [
-      { ja: 'ブルーベリーの育種と栽培の設計', en: 'Blueberry breeding and cultivation design' },
-      { ja: '培養土の設計', en: 'Designing growing media' },
-      { ja: '海外の遺伝資源の導入と植物検疫', en: 'Importing germplasm and plant quarantine' },
-      { ja: '機能性素材の探索', en: 'Exploring functional materials' },
-    ],
     works: [
       {
         title: { ja: 'ツツジ科植物用培養土壌', en: 'Growing medium for Ericaceae plants' },
@@ -404,17 +373,9 @@ export const domains: Domain[] = [
     name: { ja: '占の領域', en: 'Domain of Divination' },
     trade: { ja: '顧問業', en: 'Advisory' },
     motto: {
-      ja: '数と卦と札で、人と事業の流れを読む。',
-      en: 'Read the currents of people and ventures through numbers, hexagrams and cards.',
+      ja: '数と卦と札、そして経営学——人と事業の流れを、理と運の両方で読む',
+      en: 'Numbers, hexagrams, cards — and business school: reading people and ventures by both reason and fortune.',
     },
-    skills: [
-      { ja: '姓名判断（七格剖象法）', en: 'Name analysis (the seven-frame method)' },
-      { ja: '周易（デジタル心易）', en: 'I Ching (a digital take on plum-blossom divination)' },
-      { ja: 'タロット', en: 'Tarot (Rider–Waite–Smith)' },
-      { ja: '星平会海姓名術——数理・星導・陰陽五行の融合', en: 'Seihei-kaikai name art — numerology, astrology and the five phases in one' },
-      { ja: '経営判断の支援', en: 'Supporting management decisions' },
-      { ja: '経営学（MBA）と管理会計', en: 'Business administration (MBA) and management accounting' },
-    ],
     works: [
       {
         title: { ja: '顧問', en: 'Advisory practice' },
@@ -455,14 +416,9 @@ export const domains: Domain[] = [
     name: { ja: '織の領域', en: 'Domain of Weaving' },
     trade: { ja: '共生 AI 基盤', en: 'Symbiotic AI infrastructure' },
     motto: {
-      ja: '記憶を織れば、器が替わっても人格は続く。',
-      en: 'Weave the memory, and the personality outlives the vessel.',
+      ja: '器が替わっても、人格は続く——百年の記憶を織り、AI と共に生きる',
+      en: 'The vessel changes; the person goes on — weaving a hundred years of memory to live alongside AI.',
     },
-    skills: [
-      { ja: '階層的な長期記憶の設計', en: 'Designing hierarchical long-term memory' },
-      { ja: 'AI のペルソナとハーネスの設計', en: 'Persona and harness design for AI' },
-      { ja: '人と AI の協働の作法', en: 'Practices for human–AI collaboration' },
-    ],
     works: [
       {
         title: { ja: 'Weave', en: 'Weave' },
