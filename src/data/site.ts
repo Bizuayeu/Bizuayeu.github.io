@@ -98,8 +98,8 @@ export const hero = {
     en: 'A “feng-shui practitioner” bridging civil engineering, agronomy and the study of fate — and a “civilization hacker” who works in poetry, AI and structure.',
   },
   intro: {
-    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を操り、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの城はばらばらに見えて、どれも同じ問いで築かれている——与えられた器に、どこまで載せられるか。',
-    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Wielding lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five castles that look unrelated, all raised by one question: how much can this vessel hold?',
+    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を扱い、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの城はばらばらに見えて、どれも同じ問いで築かれている——与えられた器に、どこまで載せられるか。',
+    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Handling lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five castles that look unrelated, all raised by one question: how much can this vessel hold?',
   },
 };
 
