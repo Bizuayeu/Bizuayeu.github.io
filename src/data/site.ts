@@ -438,8 +438,8 @@ export const domains: Domain[] = [
       {
         title: { ja: '七曜インジケータ', en: 'Seven-color indicator' },
         note: {
-          ja: '応答の頭に、確信度と感情を色で示す。',
-          en: 'Shows confidence and emotion as colors at the head of each reply.',
+          ja: '応答の頭に、確信度と感情を色で示す。こちらも特許出願中。',
+          en: 'Shows confidence and emotion as colors at the head of each reply. Also patent pending.',
         },
         status: 'filed',
       },
