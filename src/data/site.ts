@@ -54,6 +54,10 @@ export const ui = {
     ja: 'Bizuayeu（ビーズちゃん）のポートフォリオ。雷・造・土・占・織——情報、建設、農業、顧問、共生 AI の五つの領域。',
     en: 'Portfolio of Bizuayeu. Five domains: thunder, building, earth, divination and weaving — information services, construction, agriculture, advisory and symbiotic AI.',
   },
+  ogAlt: {
+    ja: '朱の日輪に、生大刀・生弓矢・天詔琴を幾何の線で描いた Bizuayeu の印。',
+    en: 'The Bizuayeu emblem: a sword, a bow and arrow, and a koto drawn in geometric lines over a red sun.',
+  },
   switchTo: { ja: 'English', en: '日本語' },
   switchLabel: { ja: 'Read in English', en: '日本語で読む' },
   nav: {
@@ -100,7 +104,7 @@ export const hero = {
   },
   intro: {
     ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、今は百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を扱い、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの領域は独立して見えて、どれも同じ問いでつながっている——与えられた器に、どこまで載せられるか。',
-    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Handling lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five domains that appear independent, all bound by one question: how much can this vessel hold?',
+    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Handling lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five domains that appear independent, all bound by one question: how much can a given vessel hold?',
   },
 };
 
@@ -180,7 +184,7 @@ export const domains: Domain[] = [
     trade: { ja: '情報サービス業', en: 'Information services' },
     motto: {
       ja: '電子の力を、漏らさず余さず——最適化を武器とした二十余年',
-      en: 'Electric power, with nothing leaked and nothing to spare — twenty-odd years armed with optimization.',
+      en: 'Electric power, with nothing leaked and nothing wasted — twenty-odd years armed with optimization.',
     },
     works: [
       {

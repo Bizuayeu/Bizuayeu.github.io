@@ -1,0 +1,149 @@
+<!doctype html>
+<!--
+  X などのリンクカード用の画像（1200×630）の原本。生大刀・生弓矢・天詔琴を幾何で描く。
+  書き出し: msedge --headless --hide-scrollbars --window-size=1200,630 --virtual-time-budget=8000
+            --screenshot=public/og.png design/og.html
+-->
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&display=block"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@700&text=%E1%89%A5%E1%8B%99%E1%8A%A0%E1%8B%A8%E1%88%81&display=block"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #f6f1e7;
+      }
+      svg {
+        display: block;
+      }
+      .serif {
+        font-family: 'Noto Serif JP', serif;
+      }
+      .ethiopic {
+        font-family: 'Noto Serif Ethiopic', serif;
+      }
+    </style>
+  </head>
+  <body>
+    <svg id="card" xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+      <rect width="1200" height="630" fill="#f6f1e7" />
+      <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#1d1a16" stroke-width="2" />
+      <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#1d1a16" stroke-width="0.8" />
+      <g id="emblem"></g>
+      <g id="words">
+        <text class="ethiopic" x="660" y="238" font-size="60" font-weight="700" fill="#a8322b">ብዙአየሁ</text>
+        <text class="serif" x="656" y="352" font-size="100" font-weight="900" fill="#1d1a16" letter-spacing="2">Bizuayeu</text>
+        <line x1="662" y1="396" x2="1120" y2="396" stroke="#1d1a16" stroke-width="2" />
+        <g class="serif" font-size="46" font-weight="900">
+          <text x="662" y="472" fill="#7a5c0f">雷</text>
+          <text x="760" y="472" fill="#4c5357">造</text>
+          <text x="858" y="472" fill="#47652a">土</text>
+          <text x="956" y="472" fill="#6a3d88">占</text>
+          <text x="1054" y="472" fill="#23527c">織</text>
+        </g>
+      </g>
+    </svg>
+    <script>
+      const SUMI = '#1d1a16';
+      const KINARI = '#f6f1e7';
+      const SHU = '#a8322b';
+      const GOLD = '#d9b44a';
+      const NS = 'http://www.w3.org/2000/svg';
+      const g = document.getElementById('emblem');
+      const el = (name, attrs) => {
+        const e = document.createElementNS(NS, name);
+        for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+        g.appendChild(e);
+        return e;
+      };
+      // 縁取り（生成りの太線を下に敷いて、重なりを切り分ける）
+      const halo = (name, attrs, w = 6) =>
+        el(name, { ...attrs, stroke: KINARI, 'stroke-width': (attrs['stroke-width'] ?? 0) + w, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' });
+      const f = (n) => n.toFixed(1);
+
+      // 日輪
+      el('circle', { cx: 330, cy: 250, r: 150, fill: SHU });
+
+      // 天詔琴：上から見た琴。十三弦と、斜めに並ぶ柱
+      const koto = { x: 64, y: 452, w: 512, h: 118 };
+      el('rect', { x: koto.x, y: koto.y, width: koto.w, height: koto.h, rx: 10, fill: SUMI });
+      el('rect', { x: koto.x + 10, y: koto.y + 8, width: koto.w - 20, height: koto.h - 16, rx: 6, fill: 'none', stroke: GOLD, 'stroke-width': 1.2, opacity: 0.55 });
+      for (let i = 0; i < 13; i++) {
+        const y = koto.y + 14 + i * ((koto.h - 28) / 12);
+        el('line', { x1: koto.x + 22, y1: f(y), x2: koto.x + koto.w - 22, y2: f(y), stroke: KINARI, 'stroke-width': 1.6 });
+        const bx = koto.x + 120 + i * 26;
+        el('path', { d: `M${f(bx - 6)},${f(y + 4)} L${f(bx)},${f(y - 4)} L${f(bx + 6)},${f(y + 4)} Z`, fill: GOLD });
+      }
+
+      // 生弓矢：立てた弓。弦は左、弓は右へ張る。握りは下寄り（和弓の形）
+      const bow = { x: 120, top: 72, bottom: 420 };
+      const bowPath = `M${bow.x},${bow.top} C${bow.x + 120},${bow.top + 70} ${bow.x + 120},${bow.bottom - 70} ${bow.x},${bow.bottom}`;
+      halo('path', { d: bowPath, fill: 'none', 'stroke-width': 10 });
+      el('path', { d: bowPath, fill: 'none', stroke: SUMI, 'stroke-width': 10, 'stroke-linecap': 'round' });
+      el('line', { x1: bow.x, y1: bow.top, x2: bow.x, y2: bow.bottom, stroke: SUMI, 'stroke-width': 2 });
+
+      const ay = 300; // 矢の高さ
+      const shaft = { x1: bow.x, x2: 520 };
+      halo('line', { x1: shaft.x1, y1: ay, x2: shaft.x2, y2: ay, 'stroke-width': 5 });
+      el('line', { x1: shaft.x1, y1: ay, x2: shaft.x2, y2: ay, stroke: SUMI, 'stroke-width': 5 });
+      const head = `M${shaft.x2 - 4},${ay - 13} L${shaft.x2 + 46},${ay} L${shaft.x2 - 4},${ay + 13} Z`;
+      halo('path', { d: head, fill: SUMI });
+      el('path', { d: head, fill: SUMI });
+      for (const s of [-1, 1]) {
+        // 矢羽根：筈の側は立ち、前へ向かって細る
+        const vane = `M${bow.x + 8},${ay} L${bow.x + 8},${ay + s * 17} L${bow.x + 34},${ay + s * 17} L${bow.x + 72},${ay} Z`;
+        halo('path', { d: vane, fill: SUMI }, 4);
+        el('path', { d: vane, fill: SUMI });
+      }
+      // 握り（弓と矢の交わり）
+      el('rect', { x: 200, y: ay - 22, width: 16, height: 44, rx: 3, fill: SUMI });
+
+      // 生大刀：柄を左下、切先を右上へ。反りは峰側へふくらむ
+      const H = { x: 236, y: 438 }; // 柄頭
+      const T = { x: 548, y: 82 }; // 切先
+      const L = Math.hypot(T.x - H.x, T.y - H.y);
+      const u = { x: (T.x - H.x) / L, y: (T.y - H.y) / L };
+      const n = { x: -u.y, y: u.x }; // 峰の側（左上）
+      const at = (d, o = 0) => ({ x: H.x + u.x * d + n.x * o, y: H.y + u.y * d + n.y * o });
+      const B = 112; // 鍔の位置（柄頭からの距離）
+      const sori = 26;
+      const mid = (B + L) / 2;
+      const pt = (p) => `${f(p.x)},${f(p.y)}`;
+      const blade = [
+        `M${pt(at(B, 8))}`,
+        `Q${pt(at(mid, sori + 10))} ${pt(at(L, 0))}`,
+        `Q${pt(at(mid, sori - 12))} ${pt(at(B, -8))}`,
+        'Z',
+      ].join(' ');
+      halo('path', { d: blade, fill: SUMI });
+      el('path', { d: blade, fill: SUMI });
+      // 刃文の線
+      el('path', { d: `M${pt(at(B + 14, -3))} Q${pt(at(mid, sori - 15))} ${pt(at(L - 30, -1))}`, fill: 'none', stroke: KINARI, 'stroke-width': 1.4, opacity: 0.8 });
+      // 柄
+      const hilt = `M${pt(at(0, 7))} L${pt(at(B - 6, 8))} L${pt(at(B - 6, -8))} L${pt(at(0, -7))} Z`;
+      halo('path', { d: hilt, fill: SUMI });
+      el('path', { d: hilt, fill: SUMI });
+      for (let i = 0; i < 5; i++) {
+        const c = at(16 + i * 18);
+        const d = `M${pt({ x: c.x + u.x * 6, y: c.y + u.y * 6 })} L${pt({ x: c.x + n.x * 4.5, y: c.y + n.y * 4.5 })} L${pt({ x: c.x - u.x * 6, y: c.y - u.y * 6 })} L${pt({ x: c.x - n.x * 4.5, y: c.y - n.y * 4.5 })} Z`;
+        el('path', { d, fill: GOLD });
+      }
+      // 鍔
+      const tb = at(B - 3);
+      const ang = (Math.atan2(u.y, u.x) * 180) / Math.PI;
+      halo('ellipse', { cx: f(tb.x), cy: f(tb.y), rx: 6, ry: 22, transform: `rotate(${f(ang)} ${f(tb.x)} ${f(tb.y)})`, fill: SUMI });
+      el('ellipse', { cx: f(tb.x), cy: f(tb.y), rx: 6, ry: 22, transform: `rotate(${f(ang)} ${f(tb.x)} ${f(tb.y)})`, fill: SUMI });
+    </script>
+  </body>
+</html>

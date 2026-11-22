@@ -2,7 +2,7 @@
 // 1. ja と en の片方が空の項目を止める
 // 2. 「【要記入】」「[TODO]」の残りを止める
 // 3. http の外部リンクを止める（https だけ）
-// 4. .leakwords（手元だけの語の一覧、git に入れない）があれば、src と dist にその語が無いかを見る
+// 4. .leakwords（手元だけの語の一覧、git に入れない）があれば、src・dist・public・design・README にその語が無いかを見る
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import * as data from '../src/data/site.ts';
@@ -50,7 +50,7 @@ if (existsSync('.leakwords')) {
     .split(/\r?\n/)
     .map((s) => s.trim())
     .filter((s) => s && !s.startsWith('#'));
-  const targets = [...files('src'), ...files('dist'), ...files('public'), 'README.md'].filter(
+  const targets = [...files('src'), ...files('dist'), ...files('public'), ...files('design'), 'README.md'].filter(
     (p) => existsSync(p) && /\.(astro|ts|mjs|css|html|xml|txt|md|json|svg)$/.test(p),
   );
   for (const p of targets) {
