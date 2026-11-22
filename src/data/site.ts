@@ -55,8 +55,8 @@ export const ui = {
     en: 'Portfolio of Bizuayeu. Five domains: thunder, building, earth, divination and weaving — information services, construction, agriculture, advisory and symbiotic AI.',
   },
   ogAlt: {
-    ja: '朱の日輪に、生大刀・生弓矢・天詔琴を幾何の線で描いた Bizuayeu の印。文字は ብዙአየሁ、Bizuayeu、雷・造・土・占・織。',
-    en: 'The Bizuayeu emblem: a straight sword, a bow and arrow, and an ancient koto drawn in geometric lines over a red sun. Text: ብዙአየሁ, Bizuayeu, and 雷 造 土 占 織 (thunder, building, earth, divination, weaving).',
+    ja: '朱の日輪に、生大刀・生弓矢・天詔琴を幾何の線で描いた Bizuayeu の印。文字は ብዙ አየሁ、Bizuayeu、雷・造・土・占・織。',
+    en: 'The Bizuayeu emblem: a straight sword, a bow and arrow, and an ancient koto drawn in geometric lines over a red sun. Text: ብዙ አየሁ, Bizuayeu, and 雷 造 土 占 織 (thunder, building, earth, divination, weaving).',
   },
   switchTo: { ja: 'English', en: '日本語' },
   switchLabel: { ja: 'Read in English', en: '日本語で読む' },

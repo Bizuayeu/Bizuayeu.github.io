@@ -9,7 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const pathOf = (l: Lang) => (l === 'ja' ? '/' : '/en/');
 const url = (l: Lang) => new URL(pathOf(l), Astro.site).href;
-const ethiopic = encodeURIComponent('ብዙአየሁ');
+const ethiopic = encodeURIComponent('ብዙ አየሁ');
 // 原本は design/og.html（書き出し方は README）
 const ogImage = new URL('/og.png', Astro.site).href;
 ---
