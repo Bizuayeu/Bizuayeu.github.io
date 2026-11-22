@@ -60,7 +60,6 @@ export const ui = {
     domains: { ja: '五つの領域', en: 'Domains' },
     media: { ja: '便り', en: 'Find me' },
   },
-  worksLabel: { ja: '業', en: 'Works' },
   status: {
     granted: { ja: '特許', en: 'Patent' },
     filed: { ja: '出願中', en: 'Patent pending' },

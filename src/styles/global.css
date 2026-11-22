@@ -62,8 +62,7 @@ body {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: var(--serif);
   line-height: 1.3;
   margin: 0;
@@ -409,22 +408,15 @@ a:hover {
   font-size: 0.92rem;
 }
 
-/* 煽り文が技を語る（技の一覧は置かない） */
+/* 煽り文が技を語り、その下に成果物を並べる（見出しは置かない） */
 .motto {
   font-family: var(--serif);
   font-weight: 700;
   font-size: clamp(1.08rem, 2.6vw, 1.25rem);
   line-height: 1.65;
-  margin: 1.1rem 0 1.3rem;
+  margin: 1.1rem 0 0.8rem;
   padding-left: 0.9rem;
   border-left: 3px solid var(--c);
-}
-
-.domain h4 {
-  font-size: 0.95rem;
-  color: var(--c);
-  margin: 1rem 0 0.5rem;
-  letter-spacing: 0.1em;
 }
 
 .works {
