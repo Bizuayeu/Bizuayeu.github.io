@@ -245,6 +245,7 @@ export const domains: Domain[] = [
           en: 'Head of business development, working on marketing and R&D.',
         },
         status: 'business',
+        href: 'https://meguru-construction.com/',
       },
       {
         title: { ja: '土留め構造及び土留め構造の構築方法', en: 'Earth-retaining structure and its construction method' },
@@ -261,6 +262,7 @@ export const domains: Domain[] = [
           en: 'Planning and building multi-unit housing on land where an apartment building is not allowed.',
         },
         status: 'method',
+        href: 'https://meguru-construction.com/works/recorrido_himonya/',
       },
       {
         title: { ja: '音響シャフト構造', en: 'Acoustic shaft structure' },
