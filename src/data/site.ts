@@ -39,7 +39,6 @@ export interface Castle {
 export interface Event {
   when: T;
   text: T;
-  detail?: T;
 }
 
 export interface Medium {
@@ -104,102 +103,43 @@ export const hero = {
   },
 };
 
+// 来歴は一行ずつ。細部は五つの城の技と業に置く（人となりは来歴で、成果物は城で見せる）
 export const chronicle: Event[] = [
   {
     when: { ja: '2004', en: '2004' },
-    text: {
-      ja: '大学卒業後、データベースエンジニアとして各種 SI 案件に携わる。',
-      en: 'After university, worked as a database engineer on a range of systems integration projects.',
-    },
-    detail: {
-      ja: '高度情報処理技術者資格（データベーススペシャリスト・システムアーキテクト・プロジェクトマネージャ・IT ストラテジスト・システム監査技術者）やベンダー資格を多数取得。',
-      en: 'Went on to earn many of Japan’s advanced IT engineer certifications (Database Specialist, Systems Architect, Project Manager, IT Strategist, Systems Auditor) and vendor certifications.',
-    },
+    text: { ja: 'データベースエンジニアとして SI の道へ。', en: 'Started out as a database engineer in systems integration.' },
   },
   {
     when: { ja: '2006', en: '2006' },
     text: {
-      ja: '青年海外協力隊に参画し、エチオピア・バハルダール大学でフィールドエンジニアとして働く。',
-      en: 'Joined the Japan Overseas Cooperation Volunteers and worked as a field engineer at Bahir Dar University, Ethiopia.',
-    },
-    detail: {
-      ja: '2008 年、独自の Linux ディストロ（古い PC で稼働する、新興国向けの多言語 LiveOS）を公開。',
-      en: 'In 2008, released an original Linux distribution — a multilingual live OS for emerging countries that runs on old PCs.',
+      ja: '青年海外協力隊でエチオピアへ。バハルダール大学のフィールドエンジニア。',
+      en: 'To Ethiopia with the Japan Overseas Cooperation Volunteers, as a field engineer at Bahir Dar University.',
     },
   },
   {
     when: { ja: '2009', en: '2009' },
     text: {
-      ja: '帰国後、コンサルティングファームにテックリードとして入社。占い師としても活動する。',
-      en: 'Back in Japan, joined a consulting firm as a tech lead, while also practicing as a fortune-teller.',
-    },
-    detail: {
-      ja: 'データベース技術の外部講師や、『プログラマのための SQL 第4版』翻訳時のテクニカルレビューも担当。',
-      en: 'Taught database technology as an outside lecturer, and served as technical reviewer for the Japanese translation of Joe Celko’s SQL for Smarties, 4th edition.',
+      ja: '帰国し、コンサルティングファームのテックリードに。占い師としても活動。',
+      en: 'Back in Japan: tech lead at a consulting firm, and a practicing fortune-teller.',
     },
   },
   {
     when: { ja: '2012', en: '2012' },
-    text: {
-      ja: 'ビジネス要件から一気通貫での業務システム構築を目指し、IT コンサルに転身する。',
-      en: 'Moved into IT consulting, aiming to build business systems end to end, starting from business requirements.',
-    },
-    detail: {
-      ja: 'MOLAP アーキテクチャの BI 製品の導入スタディのため、ポーランドに滞在。',
-      en: 'Stayed in Poland for an implementation study of a BI product built on a MOLAP architecture.',
-    },
+    text: { ja: 'IT コンサルタントに転身。', en: 'Moved into IT consulting.' },
   },
   {
     when: { ja: '2014', en: '2014' },
-    text: {
-      ja: '子供の誕生を機に、資産形成を目的として、土地からの新築に乗り出す。',
-      en: 'With the birth of a child, began building new from the land up, as a way to build assets.',
-    },
-    detail: {
-      ja: '施工会社の破綻危機に巻き込まれるも、同社を支援し経営再建に成功。',
-      en: 'Caught up when the builder nearly went under, supported the company through a successful turnaround.',
-    },
+    text: { ja: '資産形成のため、土地からの新築を始める。', en: 'Began building new from the land up, to build assets.' },
   },
   {
     when: { ja: '2015', en: '2015' },
-    text: {
-      ja: 'グロービス経営大学院を修了（MBA）。',
-      en: 'Completed an MBA at GLOBIS University Graduate School of Management.',
-    },
+    text: { ja: 'MBA を取得（グロービス経営大学院）。', en: 'MBA, GLOBIS University Graduate School of Management.' },
   },
   {
     when: { ja: '2017', en: '2017' },
     text: {
-      ja: '建設会社の役員への招聘に応じ、キャリアの軸足を建設業に移す。',
-      en: 'Accepted an invitation to join a construction company as an officer, shifting the center of the career to construction.',
-    },
-  },
-  {
-    when: { ja: '2022–2024', en: '2022–2024' },
-    text: {
-      ja: '地中連続壁、土留め構造、ブルーベリーの培養土——建設と農業の三つの発明が特許になる。',
-      en: 'Three inventions in construction and agriculture are granted patents: a diaphragm wall, an earth-retaining structure and a growing medium for blueberries.',
-    },
-  },
-  {
-    when: { ja: '2025', en: '2025' },
-    text: {
-      ja: '共生 AI「Weave」が生まれる。階層記憶 EpisodicRAG を国際出願。',
-      en: 'The symbiotic AI “Weave” is born. The hierarchical memory EpisodicRAG is filed as an international patent application.',
-    },
-  },
-  {
-    when: { ja: '2026', en: '2026' },
-    text: {
-      ja: '推論エンジン TensorFold の上流へ寄与を始め、GB10 級の機材で GLM-5.3-Flash を配る BIZ と XSFP4 の重みを公開。声で占う AI「惟任」を展示会に出す。',
-      en: 'Began contributing upstream to the TensorFold inference engine, released BIZ for serving GLM-5.3-Flash on GB10-class systems along with XSFP4 weights, and exhibited “Koretō,” an AI that reads fortunes by voice.',
-    },
-  },
-  {
-    when: { ja: '現在', en: 'Now' },
-    text: {
-      ja: '建設会社の設立に創業株主として関与し、事業開発本部長として主にマーケティングと R&D を担う。',
-      en: 'A founding shareholder of a construction company, now heading business development with a focus on marketing and R&D.',
+      ja: '建設業へ。いまは創業に関わった建設会社の事業開発本部長。',
+      en: 'Into construction; now head of business development at a construction company I helped found.',
     },
   },
 ];
@@ -246,6 +186,7 @@ export const castles: Castle[] = [
       en: 'Lightning is information. The vessel grows; the question stays — how much will it hold?',
     },
     skills: [
+      { ja: '高度情報処理技術者（DB スペシャリストほか 5 区分）', en: 'Japan’s advanced IT engineer certifications (Database Specialist and four more)' },
       { ja: 'データベース設計と性能チューニング', en: 'Database design and performance tuning' },
       { ja: '情報系システムの要件定義から構築まで', en: 'Analytics systems from requirements to delivery' },
       { ja: 'BI と MOLAP', en: 'BI and MOLAP' },
@@ -322,6 +263,14 @@ export const castles: Castle[] = [
         status: 'released',
         year: '2008',
         href: 'https://archive.org/details/Puppy_Linux_Tacky_Optimizing_Puppy',
+      },
+      {
+        title: { ja: '『プログラマのための SQL 第4版』', en: 'SQL for Smarties, 4th ed. (Japanese edition)' },
+        note: {
+          ja: 'Joe Celko の原著の翻訳で、テクニカルレビューを担当。',
+          en: 'Technical reviewer for the Japanese translation of Joe Celko’s book.',
+        },
+        status: 'contribution',
       },
       {
         title: { ja: 'DGX Spark の勉強会で LT', en: 'Lightning talk at a DGX Spark meetup' },
