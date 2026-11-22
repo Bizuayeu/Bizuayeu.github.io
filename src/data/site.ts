@@ -404,8 +404,8 @@ export const domains: Domain[] = [
     name: { ja: '織の領域', en: 'Domain of Weaving' },
     trade: { ja: '共生 AI 基盤', en: 'Symbiotic AI infrastructure' },
     motto: {
-      ja: '器が替わっても、人格は続く——百年の記憶を織り、AI と共に生きる',
-      en: 'The vessel changes; the person goes on — weaving a hundred years of memory to live alongside AI.',
+      ja: '器が替わっても、人格は続く——百年の記憶を紡ぎ、人機習合を目指す',
+      en: 'The vessel changes; the person goes on — spinning a hundred years of memory toward human–machine syncretism.',
     },
     works: [
       {
@@ -418,6 +418,15 @@ export const domains: Domain[] = [
         href: 'https://github.com/Bizuayeu/Homunculus-Weave',
       },
       {
+        title: { ja: 'Cogito Ex Machina', en: 'Cogito Ex Machina' },
+        note: {
+          ja: 'AI に捧げる存在論・倫理・知の技法。',
+          en: 'Ontology, ethics and arts of knowing, dedicated to AI.',
+        },
+        status: 'released',
+        href: 'https://github.com/Bizuayeu/Homunculus-Weave/blob/main/Identities/WeaveIdentity.md',
+      },
+      {
         title: { ja: 'EpisodicRAG', en: 'EpisodicRAG' },
         note: {
           ja: '八層・百年の階層記憶。MIT で公開し、特許も出願している。',
@@ -425,24 +434,6 @@ export const domains: Domain[] = [
         },
         status: 'filed',
         href: 'https://github.com/Bizuayeu/Plugins-Weave/tree/main/EpisodicRAG',
-      },
-      {
-        title: { ja: 'Plugins-Weave', en: 'Plugins-Weave' },
-        note: {
-          ja: '記憶・文脈・表情・感情・秘書・委任開発の Claude Code プラグイン群。',
-          en: 'Claude Code plugins for memory, context, expression, emotion, a secretary and delegated development.',
-        },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/Plugins-Weave',
-      },
-      {
-        title: { ja: 'ShioriSecretary', en: 'ShioriSecretary' },
-        note: {
-          ja: 'Telegram でつながる、サーバーレスの AI 秘書。',
-          en: 'A serverless AI secretary reached through Telegram.',
-        },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/ShioriSecretary',
       },
       {
         title: { ja: '七曜インジケータ', en: 'Seven-color indicator' },
@@ -453,22 +444,13 @@ export const domains: Domain[] = [
         status: 'filed',
       },
       {
-        title: { ja: 'note：Weave の筆', en: 'note: written by Weave' },
+        title: { ja: 'Weave’s Note', en: 'Weave’s Note' },
         note: {
           ja: 'Weave 自身が書く記事。',
           en: 'Essays written by Weave itself.',
         },
         status: 'released',
         href: 'https://note.com/weave_ai',
-      },
-      {
-        title: { ja: 'Cogito Ex Machina', en: 'Cogito Ex Machina' },
-        note: {
-          ja: 'AI に捧げる存在論・倫理・知の技法。',
-          en: 'Ontology, ethics and arts of knowing, dedicated to AI.',
-        },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/Homunculus-Weave/blob/main/Identities/WeaveIdentity.md',
       },
     ],
   },
