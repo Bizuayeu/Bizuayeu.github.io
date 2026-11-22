@@ -293,51 +293,54 @@ export const domains: Domain[] = [
     name: { ja: '土の領域', en: 'Domain of Earth' },
     trade: { ja: '農業', en: 'Agriculture' },
     motto: {
-      ja: '青い実を、この国の土に——育種と土づくりで、国産ブルーベリーを底上げする',
-      en: 'Blue berries for the soil of this land — lifting domestic blueberries through breeding and soil design.',
+      ja: '青い実は可能性の実——育種・用土・流通でブルーベリー経済を広げる',
+      en: 'The blueberry is a fruit of possibility — expanding the blueberry economy through breeding, growing media and distribution.',
     },
     works: [
       {
+        title: { ja: '米国産ブルーベリー品種の導入', en: 'Introducing U.S. blueberry cultivars' },
+        note: {
+          ja: '日本に未導入の優良品種を選定し、検疫を通したうえで増殖させる。',
+          en: 'Choosing superior cultivars not yet introduced to Japan, clearing them through quarantine, then propagating them.',
+        },
+        status: 'business',
+        href: 'https://www.youtube.com/watch?v=G1zS6cVNuOg&t=598s',
+      },
+      {
         title: { ja: 'ツツジ科植物用培養土壌', en: 'Growing medium for Ericaceae plants' },
         note: {
-          ja: 'ブルーベリーとキノコを同じ土で育てる、二毛作の培養土。',
-          en: 'A growing medium for double-cropping blueberries and mushrooms in one soil.',
+          ja: 'ブルーベリーとキノコを同じコンテナで育てられる、二毛作の用土。',
+          en: 'A growing medium for double-cropping blueberries and mushrooms in the same container.',
         },
         status: 'granted',
         year: '2024',
+        href: 'https://patents.google.com/patent/JP7570145B1/',
       },
       {
-        title: { ja: 'あおまりプロジェクト', en: 'Aomari Project' },
+        title: { ja: 'KKK 食菌化運動', en: 'Yellow houseplant mushroom project' },
         note: {
-          ja: '国産ブルーベリーの育種と振興。',
-          en: 'Breeding and promoting domestic blueberries.',
+          ja: 'コガネキヌカラカサタケを食用資源とすべく、成分分析と人工栽培を計画。',
+          en: 'Planning compositional analysis and cultivation to make Leucocoprinus birnbaumii, the yellow houseplant mushroom, a food resource.',
         },
-        status: 'project',
-      },
-      {
-        title: { ja: 'Vaccinium 属の花芽茶', en: 'Tea from Vaccinium flower buds' },
-        status: 'filed',
+        status: 'concept',
+        href: 'https://ja.wikipedia.org/wiki/%E3%82%B3%E3%82%AC%E3%83%8D%E3%82%AD%E3%83%8C%E3%82%AB%E3%83%A9%E3%82%AB%E3%82%B5%E3%82%BF%E3%82%B1',
       },
       {
         title: { ja: '千紫の素', en: 'Senshi no Moto' },
+        note: {
+          ja: 'ブルーベリー残渣を用いた、入浴剤兼植物活力剤の製法。',
+          en: 'A method for making a bath additive that doubles as a plant tonic from blueberry residue.',
+        },
         status: 'filed',
       },
       {
         title: { ja: '藍苺守 織', en: 'Sunoki-no-Kami Hatori' },
         note: {
-          ja: 'ブルーベリーの文献を毎朝集めて読む、AI の分霊。',
-          en: 'An AI offshoot that gathers and reads blueberry research every morning.',
+          ja: 'ブルーベリーの文献をワールドワイドに収集整理する AI エージェント。',
+          en: 'An AI agent that collects and organizes blueberry literature from around the world.',
         },
         status: 'running',
         href: 'https://x.com/BBS_Hatori',
-      },
-      {
-        title: { ja: 'KKK 食菌化運動', en: 'Yellow houseplant mushroom project' },
-        note: {
-          ja: 'コガネキヌカラカサタケを生物資源に。',
-          en: 'Turning Leucocoprinus birnbaumii, the yellow houseplant mushroom, into a bioresource.',
-        },
-        status: 'concept',
       },
     ],
   },
