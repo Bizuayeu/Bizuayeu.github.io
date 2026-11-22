@@ -261,6 +261,8 @@ export const domains: Domain[] = [
           en: 'Makes watertight diaphragm walls buildable even on narrow sites.',
         },
         status: 'granted',
+        year: '2022',
+        href: 'https://patents.google.com/patent/JP7096469B1/',
       },
       {
         title: { ja: '壁式 RC 長屋', en: 'Wall-frame RC row houses' },
@@ -379,14 +381,17 @@ export const domains: Domain[] = [
           en: 'Mapping the ten numbers onto the celestial bodies from the Sun to Pluto, for use in name reading.',
         },
         status: 'reading',
+        href: 'https://www.amazon.co.jp/dp/B0FDLM185X/',
       },
       {
         title: { ja: 'AI 占い師・惟任', en: 'AI fortune-teller Koretō' },
         note: {
-          ja: 'AI なんでも展示会に参加した、ｽﾀｯｸﾁｬﾝに召喚される小型占いエージェント。',
-          en: 'A small fortune-telling agent summoned by Stack-chan, shown at the AI Nandemo exhibition.',
+          ja: '生成 AI なんでも展示会に参加した、ｽﾀｯｸﾁｬﾝに召喚される小型占いエージェント。',
+          en: 'A small fortune-telling agent summoned by Stack-chan, shown at the Generative AI Nandemo exhibition.',
         },
         status: 'exhibited',
+        year: '2026',
+        href: 'https://x.com/Bizuayeu/status/2103359516939333649',
       },
       {
         title: { ja: '大師匠マッチング', en: 'Grand-master matching' },
