@@ -17,7 +17,8 @@ export type Status =
   | 'exhibited'
   | 'project'
   | 'business'
-  | 'method';
+  | 'method'
+  | 'reading';
 
 export interface Work {
   title: T;
@@ -73,6 +74,7 @@ export const ui = {
     project: { ja: '進行', en: 'Ongoing' },
     business: { ja: '事業', en: 'Business' },
     method: { ja: '工法', en: 'Method' },
+    reading: { ja: '看法', en: 'Reading method' },
   } satisfies Record<Status, T>,
   domainsLead: {
     ja: '八幡掛けて八城築かん。城を築く手は、五つの領域にまたがる。',
@@ -350,40 +352,49 @@ export const domains: Domain[] = [
     name: { ja: '占の領域', en: 'Domain of Divination' },
     trade: { ja: '顧問業', en: 'Advisory' },
     motto: {
-      ja: '数と卦と札、そして経営学——人と事業の流れを、理と運の両方で読む',
-      en: 'Numbers, hexagrams, cards — and business school: reading people and ventures by both reason and fortune.',
+      ja: '数と卦と札、そして経営学——縁と事業の移り変りを、運命と人理で診る',
+      en: 'Numbers, hexagrams, cards — and business school: diagnosing how ties and ventures shift, through fate and human reason.',
     },
     works: [
       {
-        title: { ja: '顧問', en: 'Advisory practice' },
-        note: { ja: '引き受ける仕事の中身は TBD。', en: 'Scope of engagements TBD.' },
-        status: 'running',
-      },
-      {
-        title: { ja: '霊数参謀', en: 'Reisū Sanbō' },
+        title: { ja: '玄空飛星風水鑑定', en: 'Xuan Kong Flying Star feng shui readings' },
         note: {
-          ja: '七格剖象法とデジタル心易で個人を鑑定する Web アプリ。',
-          en: 'A web app for personal readings with the seven-frame method and digital plum-blossom I Ching.',
+          ja: '時間と場所の組み合わせを調整し、開運のお手伝いを行う。',
+          en: 'Adjusting how time and place combine, to help good fortune open up.',
         },
-        status: 'paused',
+        status: 'business',
       },
       {
-        title: { ja: '惟任', en: 'Koretō' },
+        title: { ja: 'デジタル心易', en: 'Digital plum-blossom I Ching' },
         note: {
-          ja: '声で占う AI。2026 年 9 月の展示会に出展。',
-          en: 'An AI that reads fortunes by voice, exhibited at a trade show in September 2026.',
+          ja: '占的・背景を BASE64 変換して卦を求める、新時代の方法論。',
+          en: 'A new-era method that derives the hexagram by Base64-encoding the question and its background.',
+        },
+        status: 'reading',
+      },
+      {
+        title: { ja: '星導数秘術の姓名判断応用', en: 'Star-guided numerology for name reading' },
+        note: {
+          ja: '十数を太陽から冥王星までの天体に変換し、姓名判断に用いる。',
+          en: 'Mapping the ten numbers onto the celestial bodies from the Sun to Pluto, for use in name reading.',
+        },
+        status: 'reading',
+      },
+      {
+        title: { ja: 'AI 占い師・惟任', en: 'AI fortune-teller Koretō' },
+        note: {
+          ja: 'AI なんでも展示会に参加した、ｽﾀｯｸﾁｬﾝに召喚される小型占いエージェント。',
+          en: 'A small fortune-telling agent summoned by Stack-chan, shown at the AI Nandemo exhibition.',
         },
         status: 'exhibited',
-        year: '2026',
       },
       {
-        title: { ja: 'PrecognitiveViewer', en: 'PrecognitiveViewer' },
+        title: { ja: '大師匠マッチング', en: 'Grand-master matching' },
         note: {
-          ja: '姓名判断・周易・タロットの三つで鑑定書を書くスキル。ShioriSecretary に同梱。',
-          en: 'A skill that writes reading reports from name analysis, I Ching and tarot. Bundled with ShioriSecretary.',
+          ja: '占いを本気で学びたい方に、間違いのない指導者を紹介するサービス。',
+          en: 'A service that introduces people serious about learning divination to teachers they can trust.',
         },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/ShioriSecretary',
+        status: 'business',
       },
     ],
   },
