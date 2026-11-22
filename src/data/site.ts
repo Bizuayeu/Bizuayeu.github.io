@@ -169,10 +169,6 @@ export const winds: T[] = [
     ja: '文明と制度の設計',
     en: 'Designing civilizations and institutions',
   },
-  {
-    ja: '高尾山に別荘を建てる計画',
-    en: 'Planning a retreat on Mt. Takao',
-  },
 ];
 
 export const castles: Castle[] = [
@@ -329,6 +325,14 @@ export const castles: Castle[] = [
         note: {
           ja: '中小建設業の担い手を支える、経営事務のエージェント。',
           en: 'An agent for back-office work in small construction firms.',
+        },
+        status: 'concept',
+      },
+      {
+        title: { ja: '高尾山の別荘', en: 'A retreat on Mt. Takao' },
+        note: {
+          ja: '高尾山の土地に別荘を建てる計画。',
+          en: 'A plan to build a retreat on land at Mt. Takao.',
         },
         status: 'concept',
       },
