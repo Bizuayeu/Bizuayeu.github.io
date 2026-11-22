@@ -15,7 +15,6 @@ export type Status =
   | 'running'
   | 'paused'
   | 'exhibited'
-  | 'talk'
   | 'project';
 
 export interface Work {
@@ -69,7 +68,6 @@ export const ui = {
     running: { ja: '稼働', en: 'Running' },
     paused: { ja: '休止', en: 'Paused' },
     exhibited: { ja: '出展', en: 'Exhibited' },
-    talk: { ja: '登壇', en: 'Talk' },
     project: { ja: '進行', en: 'Ongoing' },
   } satisfies Record<Status, T>,
   domainsLead: {
@@ -207,33 +205,6 @@ export const domains: Domain[] = [
         href: 'https://huggingface.co/Bizuayeu',
       },
       {
-        title: { ja: 'Open-DNeo', en: 'Open-DNeo' },
-        note: {
-          ja: '手頃な機材で DNeo の下書きモデルの重みを作る道具と手順（非公式）。',
-          en: 'Tools and a procedure for making DNeo drafter weights on modest hardware (unofficial).',
-        },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/Open-DNeo',
-      },
-      {
-        title: { ja: 'GenericJevMCP', en: 'GenericJevMCP' },
-        note: {
-          ja: 'DiffusionGemma で可否・選択・採点を返す、手元に置ける判定器。',
-          en: 'A self-hosted judge for yes/no, choice and score decisions, built on DiffusionGemma.',
-        },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/GenericJevMCP-via-DiffusionGemma',
-      },
-      {
-        title: { ja: 'Plugins-Bizuayeu', en: 'Plugins-Bizuayeu' },
-        note: {
-          ja: '中小企業の実務家のための Claude Code プラグイン群。',
-          en: 'Claude Code plugins for small-business practitioners.',
-        },
-        status: 'released',
-        href: 'https://github.com/Bizuayeu/Plugins-Bizuayeu',
-      },
-      {
         title: { ja: 'TOP／Kiva Linux', en: 'TOP / Kiva Linux' },
         note: {
           ja: '新興国の古い PC で動く多言語の LiveCD。SourceForge.jp で一時 6 位。今は Archive.org に保存されている。',
@@ -250,15 +221,6 @@ export const domains: Domain[] = [
           en: 'Technical reviewer for the Japanese translation of Joe Celko’s book.',
         },
         status: 'contribution',
-      },
-      {
-        title: { ja: 'DGX Spark の勉強会で LT', en: 'Lightning talk at a DGX Spark meetup' },
-        note: {
-          ja: 'LLM の体験をモデル・量子化・推論エンジン・ハーネスの四層に分け、個人が踏み込める層を示した。',
-          en: 'Split the LLM experience into four layers — model, quantization, inference engine and harness — and showed which ones an individual can reach.',
-        },
-        status: 'talk',
-        year: '2026',
       },
     ],
   },
