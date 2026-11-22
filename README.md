@@ -7,6 +7,7 @@ Bizuayeu のポートフォリオサイト。日本語は `/`、英語は `/en/`
 - 文面は [src/data/site.ts](src/data/site.ts) の一か所に、項目ごとに `ja` と `en` を並べて持つ
 - ページは [src/components/Home.astro](src/components/Home.astro) を言語ごとに描く（[src/pages/index.astro](src/pages/index.astro)・[src/pages/en/index.astro](src/pages/en/index.astro)）
 - 色と字は [src/styles/global.css](src/styles/global.css) の `:root` の token で持つ
+- Weave’s Note の掲載数（文面の `{noteCount}`）は、build の時に公開リポの台帳 `Identities/NoteArticlesByWeave.json` の `total_count` を読んで埋める（[src/data/noteCount.ts](src/data/noteCount.ts)）。読めなければ build は落ちる。台帳を更新したら、サイトは次の push か Actions の Run workflow で組み直すと数が変わる
 
 ## 手元で
 

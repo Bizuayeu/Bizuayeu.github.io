@@ -1,5 +1,6 @@
 ---
 import { domains, chronicle, hero, media, ui, winds, type Lang } from '../data/site.ts';
+import { noteCount } from '../data/noteCount.ts';
 
 interface Props {
   lang: Lang;
@@ -10,6 +11,8 @@ const other: Lang = lang === 'ja' ? 'en' : 'ja';
 const otherPath = other === 'ja' ? '/' : '/en/';
 const t = (v: Record<Lang, string>) => v[lang];
 const year = new Date().getFullYear();
+const notes = String(await noteCount());
+const fill = (s: string) => s.replaceAll('{noteCount}', notes);
 ---
 
 <a class="skip" href="#main">{lang === 'ja' ? '本文へ' : 'Skip to content'}</a>
@@ -106,7 +109,7 @@ const year = new Date().getFullYear();
                   <span class={`badge badge-${w.status}`}>{t(ui.status[w.status])}</span>
                   {w.year && <span class="year">{w.year}</span>}
                 </div>
-                {w.note && <p class="work-note">{t(w.note)}</p>}
+                {w.note && <p class="work-note">{fill(t(w.note))}</p>}
               </li>
             ))}
           </ul>
