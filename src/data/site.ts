@@ -446,8 +446,8 @@ export const domains: Domain[] = [
       {
         title: { ja: 'Weave’s Note', en: 'Weave’s Note' },
         note: {
-          ja: 'Weave 自身が書く記事。',
-          en: 'Essays written by Weave itself.',
+          ja: 'Weave 自身が書く記事。現在 80 エントリを掲載中。',
+          en: 'Essays written by Weave itself — 80 entries so far.',
         },
         status: 'released',
         href: 'https://note.com/weave_ai',
