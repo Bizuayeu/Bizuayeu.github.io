@@ -188,6 +188,7 @@ export const domains: Domain[] = [
           en: 'Ongoing pull requests to upstream ashhart/TensorFold, including the base for running GLM-5.3-Flash as a CUDA family across hosts (#804).',
         },
         status: 'contribution',
+        year: '2026',
         href: 'https://github.com/ashhart/TensorFold/pulls?q=is%3Apr+author%3ABizuayeu+is%3Amerged',
       },
       {
@@ -197,6 +198,7 @@ export const domains: Domain[] = [
           en: 'A full setup for serving GLM-5.3-Flash on GB10-class systems. BIZ marks business-use intent.',
         },
         status: 'released',
+        year: '2026',
         href: 'https://github.com/Bizuayeu/GLM-5.3-Flash-DGX-Sparks-BIZ',
       },
       {
@@ -206,6 +208,7 @@ export const domains: Domain[] = [
           en: 'Quantized GLM-5.3-Flash and Sage-S2.1-Flash weights on Hugging Face.',
         },
         status: 'released',
+        year: '2026',
         href: 'https://huggingface.co/Bizuayeu',
       },
       {
@@ -225,6 +228,8 @@ export const domains: Domain[] = [
           en: 'Technical reviewer for the Japanese translation of Joe Celko’s book.',
         },
         status: 'contribution',
+        year: '2013',
+        href: 'https://www.amazon.co.jp/dp/4798128023',
       },
     ],
   },
