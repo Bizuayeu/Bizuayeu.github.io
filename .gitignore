@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.astro/
+# 公開してはいけない語の一覧（手元だけで持つ。scripts/check.ts が読む）
+.leakwords

@@ -1,0 +1,144 @@
+---
+import { castles, chronicle, hero, media, ui, winds, type Lang } from '../data/site.ts';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const other: Lang = lang === 'ja' ? 'en' : 'ja';
+const otherPath = other === 'ja' ? '/' : '/en/';
+const t = (v: Record<Lang, string>) => v[lang];
+const year = new Date().getFullYear();
+---
+
+<a class="skip" href="#main">{lang === 'ja' ? '本文へ' : 'Skip to content'}</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href={lang === 'ja' ? '/' : '/en/'}>Bizuayeu</a>
+    <nav aria-label={lang === 'ja' ? '目次' : 'Sections'}>
+      <ul class="nav">
+        <li><a href="#chronicle">{t(ui.nav.chronicle)}</a></li>
+        <li><a href="#winds">{t(ui.nav.winds)}</a></li>
+        <li><a href="#castles">{t(ui.nav.castles)}</a></li>
+        <li><a href="#media">{t(ui.nav.media)}</a></li>
+      </ul>
+    </nav>
+    <a class="lang" href={otherPath} hreflang={other} lang={other} aria-label={t(ui.switchLabel)}>
+      {t(ui.switchTo)}
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <p class="script" lang="am">{hero.script}</p>
+    <h1 id="hero-title">{hero.handle}</h1>
+    <p class="meaning">{t(hero.meaning)}</p>
+    <p class="tagline">{t(hero.tagline)}</p>
+    <p class="intro">{t(hero.intro)}</p>
+    <ul class="seals" aria-label={t(ui.nav.castles)}>
+      {
+        castles.map((c) => (
+          <li>
+            <a class={`seal seal-${c.id}`} href={`#${c.id}`}>
+              <span class="seal-kanji" aria-hidden="true">
+                {c.kanji}
+              </span>
+              <span class="seal-trade">{t(c.trade)}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="chronicle" class="block wrap" aria-labelledby="chronicle-title">
+    <h2 id="chronicle-title">{t(ui.nav.chronicle)}</h2>
+    <ol class="timeline">
+      {
+        chronicle.map((e) => (
+          <li>
+            <span class="when">{t(e.when)}</span>
+            <p>{t(e.text)}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section id="winds" class="block wrap" aria-labelledby="winds-title">
+    <h2 id="winds-title">{t(ui.nav.winds)}</h2>
+    <ul class="winds">{winds.map((w) => <li>{t(w)}</li>)}</ul>
+  </section>
+
+  <section id="castles" class="block wrap" aria-labelledby="castles-title">
+    <h2 id="castles-title">{t(ui.nav.castles)}</h2>
+    <p class="lead">{t(ui.castlesLead)}</p>
+    {
+      castles.map((c) => (
+        <article id={c.id} class={`castle castle-${c.id}`} aria-labelledby={`${c.id}-title`}>
+          <div class="castle-head">
+            <span class="castle-kanji" aria-hidden="true">
+              {c.kanji}
+            </span>
+            <div>
+              <h3 id={`${c.id}-title`}>{t(c.name)}</h3>
+              <p class="trade">{t(c.trade)}</p>
+            </div>
+          </div>
+          <p class="motto">{t(c.motto)}</p>
+          <h4>{t(ui.skillsLabel)}</h4>
+          <ul class="skills">{c.skills.map((s) => <li>{t(s)}</li>)}</ul>
+          <h4>{t(ui.worksLabel)}</h4>
+          <ul class="works">
+            {c.works.map((w) => (
+              <li>
+                <div class="work-head">
+                  {w.href ? (
+                    <a class="work-title" href={w.href} rel="noopener">
+                      {t(w.title)}
+                      <span class="ext" aria-hidden="true">
+                        ↗
+                      </span>
+                    </a>
+                  ) : (
+                    <span class="work-title">{t(w.title)}</span>
+                  )}
+                  <span class={`badge badge-${w.status}`}>{t(ui.status[w.status])}</span>
+                  {w.year && <span class="year">{w.year}</span>}
+                </div>
+                {w.note && <p class="work-note">{t(w.note)}</p>}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </section>
+
+  <section id="media" class="block wrap" aria-labelledby="media-title">
+    <h2 id="media-title">{t(ui.nav.media)}</h2>
+    <p class="lead">{t(ui.mediaLead)}</p>
+    <ul class="media">
+      {
+        media.map((m) => (
+          <li>
+            <a href={m.href} rel="me noopener">
+              <span class="media-name">{m.name}</span>
+              <span class="media-handle">{m.handle}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <p>{t(ui.footer)} · © {year} Bizuayeu</p>
+    <a href={otherPath} hreflang={other} lang={other}>{t(ui.switchTo)}</a>
+  </div>
+</footer>
