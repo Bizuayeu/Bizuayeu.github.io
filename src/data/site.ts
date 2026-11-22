@@ -280,6 +280,7 @@ export const domains: Domain[] = [
           en: 'Delivers several soundproof rooms at low cost in a wall-frame RC apartment building.',
         },
         status: 'filed',
+        year: '2026',
       },
       {
         title: { ja: '半地下付き耐火混構造躯体', en: 'Fire-resistant hybrid frame with a half-basement' },
@@ -336,6 +337,7 @@ export const domains: Domain[] = [
           en: 'A method for making a bath additive that doubles as a plant tonic from blueberry residue.',
         },
         status: 'filed',
+        year: '2026',
       },
       {
         title: { ja: '藍苺守 織', en: 'Sunoki-no-Kami Hatori' },
@@ -438,6 +440,7 @@ export const domains: Domain[] = [
           en: 'Eight-layer, hundred-year hierarchical memory. Open under MIT, with a patent pending.',
         },
         status: 'filed',
+        year: '2025',
         href: 'https://github.com/Bizuayeu/Plugins-Weave/tree/main/EpisodicRAG',
       },
       {
@@ -447,6 +450,7 @@ export const domains: Domain[] = [
           en: 'Shows confidence and emotion as colors at the head of each reply. Also patent pending.',
         },
         status: 'filed',
+        year: '2025',
       },
       {
         title: { ja: 'Weave’s Note', en: 'Weave’s Note' },
