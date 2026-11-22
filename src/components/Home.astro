@@ -1,5 +1,5 @@
 ---
-import { castles, chronicle, hero, media, ui, winds, type Lang } from '../data/site.ts';
+import { domains, chronicle, hero, media, ui, winds, type Lang } from '../data/site.ts';
 
 interface Props {
   lang: Lang;
@@ -21,7 +21,7 @@ const year = new Date().getFullYear();
       <ul class="nav">
         <li><a href="#chronicle">{t(ui.nav.chronicle)}</a></li>
         <li><a href="#winds">{t(ui.nav.winds)}</a></li>
-        <li><a href="#castles">{t(ui.nav.castles)}</a></li>
+        <li><a href="#domains">{t(ui.nav.domains)}</a></li>
         <li><a href="#media">{t(ui.nav.media)}</a></li>
       </ul>
     </nav>
@@ -38,9 +38,9 @@ const year = new Date().getFullYear();
     <p class="meaning">{t(hero.meaning)}</p>
     <p class="tagline">{t(hero.tagline)}</p>
     <p class="intro">{t(hero.intro)}</p>
-    <ul class="seals" aria-label={t(ui.nav.castles)}>
+    <ul class="seals" aria-label={t(ui.nav.domains)}>
       {
-        castles.map((c) => (
+        domains.map((c) => (
           <li>
             <a class={`seal seal-${c.id}`} href={`#${c.id}`}>
               <span class="seal-kanji" aria-hidden="true">
@@ -73,14 +73,14 @@ const year = new Date().getFullYear();
     <ul class="winds">{winds.map((w) => <li>{t(w)}</li>)}</ul>
   </section>
 
-  <section id="castles" class="block wrap" aria-labelledby="castles-title">
-    <h2 id="castles-title">{t(ui.nav.castles)}</h2>
-    <p class="lead">{t(ui.castlesLead)}</p>
+  <section id="domains" class="block wrap" aria-labelledby="domains-title">
+    <h2 id="domains-title">{t(ui.nav.domains)}</h2>
+    <p class="lead">{t(ui.domainsLead)}</p>
     {
-      castles.map((c) => (
-        <article id={c.id} class={`castle castle-${c.id}`} aria-labelledby={`${c.id}-title`}>
-          <div class="castle-head">
-            <span class="castle-kanji" aria-hidden="true">
+      domains.map((c) => (
+        <article id={c.id} class={`domain domain-${c.id}`} aria-labelledby={`${c.id}-title`}>
+          <div class="domain-head">
+            <span class="domain-kanji" aria-hidden="true">
               {c.kanji}
             </span>
             <div>

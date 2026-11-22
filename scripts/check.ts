@@ -34,8 +34,8 @@ function walk(v: unknown, path: string): void {
   }
 }
 
-const { ui, hero, chronicle, winds, castles, media } = data;
-walk({ ui, hero, chronicle, winds, castles, media }, '');
+const { ui, hero, chronicle, winds, domains, media } = data;
+walk({ ui, hero, chronicle, winds, domains, media }, '');
 
 function files(dir: string): string[] {
   if (!existsSync(dir)) return [];

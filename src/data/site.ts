@@ -26,7 +26,7 @@ export interface Work {
   href?: string;
 }
 
-export interface Castle {
+export interface Domain {
   id: string;
   kanji: string;
   name: T;
@@ -50,15 +50,15 @@ export interface Medium {
 export const ui = {
   title: { ja: 'Bizuayeu — 私は多くを見た', en: 'Bizuayeu — I have seen much' },
   description: {
-    ja: 'Bizuayeu（ビーズちゃん）のポートフォリオ。雷・造・土・占・織——情報、建設、農業、顧問、共生 AI の五つの城。',
-    en: 'Portfolio of Bizuayeu. Five castles: thunder, building, earth, divination and weaving — information services, construction, agriculture, advisory and symbiotic AI.',
+    ja: 'Bizuayeu（ビーズちゃん）のポートフォリオ。雷・造・土・占・織——情報、建設、農業、顧問、共生 AI の五つの領域。',
+    en: 'Portfolio of Bizuayeu. Five domains: thunder, building, earth, divination and weaving — information services, construction, agriculture, advisory and symbiotic AI.',
   },
   switchTo: { ja: 'English', en: '日本語' },
   switchLabel: { ja: 'Read in English', en: '日本語で読む' },
   nav: {
     chronicle: { ja: '来歴', en: 'Chronicle' },
     winds: { ja: '好む風', en: 'Winds' },
-    castles: { ja: '五つの城', en: 'Castles' },
+    domains: { ja: '五つの領域', en: 'Domains' },
     media: { ja: '便り', en: 'Find me' },
   },
   skillsLabel: { ja: '技', en: 'Arts' },
@@ -75,9 +75,9 @@ export const ui = {
     talk: { ja: '登壇', en: 'Talk' },
     project: { ja: '進行', en: 'Ongoing' },
   } satisfies Record<Status, T>,
-  castlesLead: {
-    ja: '八幡掛けて八城築かん。築きかけの城を、生業ごとに五つ並べる。',
-    en: 'Raise eight castles under the eight banners. Here are five, still being built, one for each trade.',
+  domainsLead: {
+    ja: '八幡掛けて八城築かん。城を築く手は、五つの領域にまたがる。',
+    en: 'Raise eight castles under the eight banners — the work spans five domains.',
   },
   mediaLead: {
     ja: '風の便りは、ここから。',
@@ -98,12 +98,12 @@ export const hero = {
     en: 'A “feng-shui practitioner” bridging civil engineering, agronomy and the study of fate — and a “civilization hacker” who works in poetry, AI and structure.',
   },
   intro: {
-    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を扱い、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの城はばらばらに見えて、どれも同じ問いで築かれている——与えられた器に、どこまで載せられるか。',
-    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Handling lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five castles that look unrelated, all raised by one question: how much can this vessel hold?',
+    ja: 'データベースの技師として歩み出し、青ナイルの源、タナ湖のほとりでは古い計算機と細い回線を相手に働いた。百二十八メガバイトの器に OS を納めたその手で、いまは百二十八ギガバイトの器を束ねて、大規模言語モデルを納めている。雷を扱い、建物を構え、土を調え、運命を読み、AI と記憶を紡ぐ。五つの領域はばらばらに見えて、どれも同じ問いでつながっている——与えられた器に、どこまで載せられるか。',
+    en: 'The path began with databases and ran through Lake Tana, at the source of the Blue Nile, working with old computers and thin lines. The hands that once fit an operating system into 128 megabytes now fit large language models across machines of 128 gigabytes each. Handling lightning, raising structures, tending soil, reading fate, spinning AI and memory together — five domains that look unrelated, all bound by one question: how much can this vessel hold?',
   },
 };
 
-// 来歴は一行ずつ。細部は五つの城の技と業に置く（人となりは来歴で、成果物は城で見せる）
+// 来歴は一行ずつ。細部は五つの領域の技と業に置く（人となりは来歴で、成果物は領域で見せる）
 export const chronicle: Event[] = [
   {
     when: { ja: '2004', en: '2004' },
@@ -171,11 +171,11 @@ export const winds: T[] = [
   },
 ];
 
-export const castles: Castle[] = [
+export const domains: Domain[] = [
   {
     id: 'rai',
     kanji: '雷',
-    name: { ja: '雷の城', en: 'Castle of Thunder' },
+    name: { ja: '雷の領域', en: 'Domain of Thunder' },
     trade: { ja: '情報サービス業', en: 'Information services' },
     motto: {
       ja: '雷は情報。器が大きくなっても、問いは同じ——どこまで載せられるか。',
@@ -282,7 +282,7 @@ export const castles: Castle[] = [
   {
     id: 'zou',
     kanji: '造',
-    name: { ja: '造の城', en: 'Castle of Building' },
+    name: { ja: '造の領域', en: 'Domain of Building' },
     trade: { ja: '建設業', en: 'Construction' },
     motto: {
       ja: '狭い土地に、材料の長所を合わせて建てる。',
@@ -341,7 +341,7 @@ export const castles: Castle[] = [
   {
     id: 'do',
     kanji: '土',
-    name: { ja: '土の城', en: 'Castle of Earth' },
+    name: { ja: '土の領域', en: 'Domain of Earth' },
     trade: { ja: '農業', en: 'Agriculture' },
     motto: {
       ja: '青い実を、この国の土に。',
@@ -401,7 +401,7 @@ export const castles: Castle[] = [
   {
     id: 'sen',
     kanji: '占',
-    name: { ja: '占の城', en: 'Castle of Divination' },
+    name: { ja: '占の領域', en: 'Domain of Divination' },
     trade: { ja: '顧問業', en: 'Advisory' },
     motto: {
       ja: '数と卦と札で、人と事業の流れを読む。',
@@ -452,7 +452,7 @@ export const castles: Castle[] = [
   {
     id: 'shoku',
     kanji: '織',
-    name: { ja: '織の城', en: 'Castle of Weaving' },
+    name: { ja: '織の領域', en: 'Domain of Weaving' },
     trade: { ja: '共生 AI 基盤', en: 'Symbiotic AI infrastructure' },
     motto: {
       ja: '記憶を織れば、器が替わっても人格は続く。',
